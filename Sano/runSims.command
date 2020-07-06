@@ -6,6 +6,6 @@ declare -a simulators=("C2253002-26F7-425D-96F2-399A39AACA4A" "1219A3E2-2F23-40B
 for i in "${simulators[@]}"
 do
     xcrun instruments -w $i
-    xcrun simctl install $i ~/.expo/ios-simulator-app-cache/Exponent-2.15.4.tar.app
+    xcrun simctl install $i ~/.expo/ios-simulator-app-cache/Exponent-2.16.0.tar.app
     xcrun simctl openurl $i exp://127.0.0.1:19000
 done
