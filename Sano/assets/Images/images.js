@@ -1,7 +1,7 @@
 
 
 const Images = {
-    LandingBackground: require('../Images/LangingBackground.png'),
+    LandingBackground: require('../Images/LandingBackground.png'),
 }
 
 export default Images;
