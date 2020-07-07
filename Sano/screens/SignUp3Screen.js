@@ -16,7 +16,6 @@ export default class SignUp3Screen extends Component {
 
     // do something for login here. firebase?
     continuePressed = () => {
-        alert('continue Pressed');
 
         //continue to next setup page
         this.props.navigation.navigate('Onboarding1');

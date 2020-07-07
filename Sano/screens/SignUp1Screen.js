@@ -18,7 +18,6 @@ export default class SignUp1Screen extends Component {
 
     // do something for login here. firebase?
     signupPressed = () => {
-        alert('SignUp Pressed');
         this.props.navigation.navigate('Signup2');
         //create a Mainnav and redirect there
         
