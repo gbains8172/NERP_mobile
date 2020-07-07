@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     continueContainer: {
         backgroundColor: 'black',
         width: '60%',
-        height: '10%',
+        height: '8%',
         alignItems: "center",
         alignSelf: "center",
         marginTop: '5%',
