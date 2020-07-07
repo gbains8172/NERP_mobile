@@ -35,8 +35,8 @@ export default class SignUp3Screen extends Component {
 
                 <View style = {styles.topView}>
                     <View style = {styles.textContainer}>
-                        <Text style = {{fontSize: 25, fontFamily: "Times New Roman", }}>Finish Setting Up</Text>
-                        <Text style = {{fontSize: 25, fontFamily: "Times New Roman", }}>Your Account</Text>
+                        <Text style = {{fontSize: 25, fontFamily: "IBM Plex Mono", }}>Finish Setting Up</Text>
+                        <Text style = {{fontSize: 25, fontFamily: "IBM Plex Mono", }}>Your Account</Text>
                     </View>
 
                     <View style = {styles.inputContainer}>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     },
 
     topView: {
-        flex: 2,
+        flex: 3,
         alignItems: "center",
 
     },

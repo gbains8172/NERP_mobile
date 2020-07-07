@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         flexDirection: "column"
     },
     Sano: {
-        fontFamily: 'Times New Roman',
+        fontFamily: "IBM Plex Mono",
         color: 'white',
         fontSize: 20,
         alignSelf:"center",

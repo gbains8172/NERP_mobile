@@ -43,7 +43,7 @@ export default class LoginScreen extends Component {
 
                 <View style = {styles.topView}>
                     <View style = {styles.loginTextContainer}>
-                        <Text style = {{fontSize: 25, fontFamily: "Times New Roman", }}>Log In</Text>
+                        <Text style = {{fontSize: 25, fontFamily:"IBM Plex Mono", }}>Log In</Text>
                     </View>
 
                     <View style = {styles.inputContainer}>
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     },
 
     topView: {
-        flex: 2,
+        flex: 3,
         alignItems: "center",
 
     },

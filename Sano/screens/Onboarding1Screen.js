@@ -69,10 +69,10 @@ export default class Onboarding1Screen extends Component {
             <StatusBar barStyle = "dark-content"/>
             <SafeAreaView style={{flex: 1, }, androidSafeView.AndroidSafeArea}>
                 <View style = {styles.topView}>
-                    <Text style = {{FontFamily:"Times New Roman",fontSize:20, marginLeft: '5%', marginTop: "35%"}}>Select your favorite brands</Text>
+                    <Text style = {{FontFamily:"IBM Plex Mono",fontSize:20, marginLeft: '5%', marginTop: "35%"}}>Select your favorite brands</Text>
                     <SearchBar
                         lightTheme
-                        inputStyle={{color: 'black', fontFamily:"Times New Roman"}}
+                        inputStyle={{color: 'black', fontFamily:"IBM Plex Mono"}}
                         inputContainerStyle = {{color: 'white', backgroundColor: 'rgba(0,0,0,0.05)', height: '100%'}}
                         containerStyle={{backgroundColor: 'white', marginTop: "10%", width: '90%',height: '25%', alignSelf: "center", borderTopWidth: 0, borderBottomWidth: 0}}
                         placeholder= "Search"
@@ -92,7 +92,7 @@ export default class Onboarding1Screen extends Component {
                             <TouchableOpacity onPress={() => {this.brandPressed(item)}}>
                                 <View style={{width: (Dimensions.get('window').width), height: 50, padding:10, flexDirection:'row', alignItems:'center', backgroundColor:'rgba(0,0,0,0.05)', marginTop: '2%'}}>
                                     <View style={{width: (Dimensions.get('window').width)/1.5, height: 50, margin:10, marginRight:50, flexDirection:'row', alignItems:'center'}}>
-                                        <Text style={{fontFamily:"Times New Roman",fontSize:20, margin:10, marginTop:20, marginLeft: 20}}>{item.brand}</Text>
+                                        <Text style={{fontFamily:"IBM Plex Mono",fontSize:20, margin:10, marginTop:20, marginLeft: 20}}>{item.brand}</Text>
                                     </View>
                                     {/* <Image style={{marginLeft:20, width: '15%', height: 10, resizeMode: "contain", marginLeft: "-5%"}} source={images.select}/> */}
                                     <Image style={{marginLeft:20, width: '15%', height: 10, resizeMode: "contain", marginLeft: "-5%"}} 

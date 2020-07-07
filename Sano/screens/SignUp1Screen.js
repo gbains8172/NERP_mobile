@@ -40,7 +40,7 @@ export default class SignUp1Screen extends Component {
 
                 <View style = {styles.topView}>
                     <View style = {styles.loginTextContainer}>
-                        <Text style = {{fontSize: 25, fontFamily: "Times New Roman", }}>Sign Up</Text>
+                        <Text style = {{fontSize: 25, fontFamily: "IBM Plex Mono", }}>Sign Up</Text>
                     </View>
 
                     <View style = {styles.inputContainer}>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     },
 
     topView: {
-        flex: 2,
+        flex: 3,
         alignItems: "center",
 
     },
