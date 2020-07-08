@@ -69,7 +69,7 @@ export default class Onboarding1Screen extends Component {
             <StatusBar barStyle = "dark-content"/>
             <SafeAreaView style={{flex: 1, }, androidSafeView.AndroidSafeArea}>
                 <View style = {styles.topView}>
-                    <Text style = {{FontFamily:"IBM Plex Mono",fontSize:20, marginLeft: '5%', marginTop: "25%"}}>Select your favorite brands</Text>
+                    <Text style = {{FontFamily:"IBM Plex Mono",fontSize:20, marginLeft: '5%'}}>Select your favorite brands</Text>
                     <SearchBar
                         lightTheme
                         inputStyle={{color: 'black', fontFamily:"IBM Plex Mono"}}
