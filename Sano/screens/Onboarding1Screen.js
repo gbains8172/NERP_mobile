@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {Text,SafeAreaView, FlatList, StyleSheet, View, Image, TouchableOpacity, TextInput, StatusBar, Dimensions } from 'react-native';
 import androidSafeView from '../StyleSheets/androidSafeView';
 import { SearchBar } from 'react-native-elements';
-
+import SpanFont from '../StyleSheets/font'
 import images from '../assets/Images/images';
 import { color } from "react-native-reanimated";
 

@@ -23,7 +23,8 @@ export default class App extends React.Component {
     await Promise.all([
       Asset.loadAsync(imagesArr),
       Font.loadAsync({
-        'IBM Plex Mono': require('./assets/Fonts/IBMPlexMono-Regular.ttf')
+        'IBM Plex Mono': require('./assets/Fonts/IBMPlexMono-Regular.ttf'),
+        'Times New Roman': require('./assets/Fonts/timesNewRoman.ttf'),
       })
     ])
     this.setState({ isLoadingComplete: true });

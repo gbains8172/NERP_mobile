@@ -21,6 +21,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "androidNavigationBar": {
+      "visible": "immersive",
+      "barStyle": "light-content",
+      "backgroundColor": "black"
+      },
+    "android" : {
+      "softwareKeyboardLayoutMode": "pan"
     }
   }
 }

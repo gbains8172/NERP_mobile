@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Text,SafeAreaView, StyleSheet, View, Image, TouchableOpacity, TextInput, StatusBar} from 'react-native';
 import androidSafeView from '../StyleSheets/androidSafeView';
+import SpanFont from '../StyleSheets/font'
 
 export default class SignUp1Screen extends Component {
    
@@ -40,7 +41,7 @@ export default class SignUp1Screen extends Component {
 
                 <View style = {styles.topView}>
                     <View style = {styles.loginTextContainer}>
-                        <Text style = {{fontSize: 25, fontFamily: "IBM Plex Mono", }}>Sign Up</Text>
+                        <Text style = {{fontSize: 25, fontFamily: SpanFont.Span.fontFamily, }}>Sign Up</Text>
                     </View>
 
                     <View style = {styles.inputContainer}>

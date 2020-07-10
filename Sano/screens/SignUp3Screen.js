@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {Text,SafeAreaView, StyleSheet, View, Image, TouchableOpacity, TextInput, StatusBar} from 'react-native';
 import androidSafeView from '../StyleSheets/androidSafeView';
+import SpanFont from '../StyleSheets/font'
+
 
 export default class SignUp3Screen extends Component {
     constructor(props){
@@ -35,8 +37,8 @@ export default class SignUp3Screen extends Component {
 
                 <View style = {styles.topView}>
                     <View style = {styles.textContainer}>
-                        <Text style = {{fontSize: 25, fontFamily: "IBM Plex Mono", }}>Finish Setting Up</Text>
-                        <Text style = {{fontSize: 25, fontFamily: "IBM Plex Mono", }}>Your Account</Text>
+                        <Text style = {{fontSize: 25, fontFamily: SpanFont.Span.fontFamily, }}>Finish Setting Up</Text>
+                        <Text style = {{fontSize: 25, fontFamily: SpanFont.Span.fontFamily, }}>Your Account</Text>
                     </View>
 
                     <View style = {styles.inputContainer}>
