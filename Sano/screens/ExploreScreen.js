@@ -4,18 +4,17 @@ import androidSafeView from '../StyleSheets/androidSafeView';
 import SpanFont from '../StyleSheets/font'
 
 
-export default class HomeScreen extends Component {
 
+export default class ExploreScreen extends Component {
     render(){
         return(
             <>
             <StatusBar barStyle = "dark-content"/>
             <SafeAreaView style={{flex: 1, }, androidSafeView.AndroidSafeArea}>
-                <Text>Home Screen</Text>
+                <Text>Explore Screen</Text>
             </SafeAreaView>
             </>
 
         );
     }
-    
 }

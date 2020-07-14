@@ -3,7 +3,7 @@ import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, Text, View } from 'react-native';
-import images from './assets/Images/images';
+import Images from './assets/Images/Images';
 import AppNavigator from './navigation/AppNavigator';
 
 
@@ -16,12 +16,12 @@ export default class App extends React.Component {
   }
 
   async componentDidMount(){
-    imagesArr = []
-    for (var key in images){
-      imagesArr.push(images[key])
+    ImagesArr = []
+    for (var key in Images){
+      ImagesArr.push(Images[key])
     }
     await Promise.all([
-      Asset.loadAsync(imagesArr),
+      Asset.loadAsync(ImagesArr),
       Font.loadAsync({
         'IBM Plex Mono': require('./assets/Fonts/IBMPlexMono-Regular.ttf'),
         'Times New Roman': require('./assets/Fonts/timesNewRoman.ttf'),
