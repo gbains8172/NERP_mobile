@@ -38,6 +38,9 @@ HomeStack.navigationOptions = {
     tabBarOptions: {
       activeTintColor: '#000000',
       inactiveTintColor: '#a6a6a6',
+      labelStyle: {
+        fontFamily: "IBM Plex Mono"
+      },
     },
   };
 
@@ -67,6 +70,9 @@ ExploreStack.navigationOptions = {
     tabBarOptions: {
       activeTintColor: '#000000',
       inactiveTintColor: '#a6a6a6',
+      labelStyle: {
+        fontFamily: "IBM Plex Mono"
+      },
     },
   };
 
@@ -95,6 +101,9 @@ ProfileStack.navigationOptions = {
     tabBarOptions: {
       activeTintColor: '#000000',
       inactiveTintColor: '#a6a6a6',
+      labelStyle: {
+        fontFamily: "IBM Plex Mono"
+      },
     },
   };
 
