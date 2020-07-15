@@ -15,6 +15,13 @@ const Images = {
     Profile: require('../Images/Profile.png'),
     ProfileFocused: require('../Images/ProfileFocused.png'),
 
+
+    //Temporary Images
+    tempProfileImage: require('../Images/TempImages/tempProfileImage.jpg'),
+
+    //ProfileScreen Images
+    notification: require('../Images/notification.png'),
+
 }
 
 export default Images;

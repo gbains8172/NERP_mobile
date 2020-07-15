@@ -116,7 +116,6 @@ ProfileStack.navigationOptions = {
     },
   });
 
-
   export default createBottomTabNavigator({
     HomeStack,
     ExploreStack,
