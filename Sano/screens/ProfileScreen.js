@@ -67,22 +67,28 @@ export default class ProfileScreen extends Component {
 
                 <View style = {styles.topView}>
                     <View style = {styles.header}>
-                        <Image source = {Images.tempProfileImage} style = {styles.profileImage}/>
-                        <View>
-                            {/* Grab Name!! */}
-                            <Text style = {styles.name}> Gavin Bains</Text>
-                            
-                            {/* Grab userName!! */}
-                            <Text style = {styles.userName}>@theBane </Text>
+                        <View style = {styles.headerLeft}>
+                            <Image source = {Images.tempProfileImage} style = {styles.profileImage}/>
+                            <View>
+                                {/* Grab Name!! */}
+                                <Text style = {styles.name}> Gavin Bains</Text>
+                                
+                                {/* Grab userName!! */}
+                                <Text style = {styles.userName}>@theBane </Text>
+                            </View>
                         </View>
 
-                        {/* Does this bell Do anything??? */}
-                        <Image source = {Images.notification} style = {styles.notification}/>
+                        <View style = {styles.headerRight}>
+                            {/* Does this bell Do anything??? */}
+                            <Image source = {Images.notification} style = {styles.notification}/>
+                        </View>
+
+
                     </View>
 
                     {/* Get The Bio From API */}
-                    <View style = {styles.bio}>
-                        <Text style = {styles.bioText}>You merely adopted the dark. I was born in it, molded by it.</Text>
+                    <View style = {styles.bio} >
+                        <Text numberOfLines={2} style = {styles.bioText}>You merely adopted the dark. I was born in it, molded by it.</Text>
                     </View>
                     <TouchableOpacity onPress onPress = {this.followButtonPressed}>
                         <Image source = {Images.followButton} style = {styles.followButton}/>
@@ -190,30 +196,11 @@ export default class ProfileScreen extends Component {
                         imageContainerStyle	= {{height: 230,  opacity: 0.5 }}
                         containerWidth	= {(Dimensions.get('window').width) - 20}
                         images={[
-                            // Can be used with different image object fieldnames.
-                            // Ex. source, source.uri, uri, URI, url, URL
                             { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg"                        },
-                            // IMPORTANT: It is REQUIRED for LOCAL IMAGES
-                            // to include a dimensions field with the
-                            // actual width and height of the image or
-                            // it will throw an error.
-                            // { source: require("yourApp/image.png"),
-                            //     dimensions: { width: 1080, height: 1920 }
-                            // },
-                            // "width" & "height" is an alternative to the dimensions
-                            // field that will also be acceptable.
-                            // { source: require("yourApp/image.png"),
-                            //     width: 1080,
-                            //     height: 1920 },
                             { source: { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg" } },
                             { uri: "https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg",
-                                // Optional: Adding a dimensions field with
-                                // the actual width and height for REMOTE IMAGES
-                                // will help improve performance.
                                 dimensions: { width: 1080, height: 1920 } },
                             { URI: "https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg",
-                                // Optional: Does not require an id for each
-                                // image object, but is for best practices.
                                 id: "blpccx4cn" },
                             { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
                             { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
@@ -253,30 +240,11 @@ export default class ProfileScreen extends Component {
                         imageContainerStyle	= {{height: 230,  opacity: 0.5 }}
                         containerWidth	= {(Dimensions.get('window').width) - 20}
                         images={[
-                            // Can be used with different image object fieldnames.
-                            // Ex. source, source.uri, uri, URI, url, URL
                             { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg"                        },
-                            // IMPORTANT: It is REQUIRED for LOCAL IMAGES
-                            // to include a dimensions field with the
-                            // actual width and height of the image or
-                            // it will throw an error.
-                            // { source: require("yourApp/image.png"),
-                            //     dimensions: { width: 1080, height: 1920 }
-                            // },
-                            // "width" & "height" is an alternative to the dimensions
-                            // field that will also be acceptable.
-                            // { source: require("yourApp/image.png"),
-                            //     width: 1080,
-                            //     height: 1920 },
                             { source: { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg" } },
                             { uri: "https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg",
-                                // Optional: Adding a dimensions field with
-                                // the actual width and height for REMOTE IMAGES
-                                // will help improve performance.
                                 dimensions: { width: 1080, height: 1920 } },
                             { URI: "https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg",
-                                // Optional: Does not require an id for each
-                                // image object, but is for best practices.
                                 id: "blpccx4cn" },
                             { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
                             { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
@@ -321,10 +289,19 @@ const styles = StyleSheet.create({
     },
     followButton: {
         marginTop: '2%',
-        marginLeft: '6%',
+        marginLeft: '4%',
+    },
+    headerLeft: {
+        width: '80%',
+        flexDirection: "row",
+    }, 
+    headerRight: {
+        width: '18%',
+        alignItems: "flex-end",
+
     },
     bottomView: {
-        flex: 6,
+        flex: 4.5,
         backgroundColor: 'white'
     },
     tabStyle:{
@@ -343,7 +320,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         paddingBottom: 5,
         borderBottomColor: 'black',
-        borderBottomWidth: 1,
+        textDecorationLine: 'underline',
     },
     activeTab: {
         backgroundColor: 'white',
@@ -361,15 +338,17 @@ const styles = StyleSheet.create({
     },
     profileImage: {
         width: '20%', 
-        height: '70%',
+        height: '65%',
         resizeMode: 'contain',
         borderRadius: Dimensions.get('window').width / 2,
         marginLeft: '3%',
     },
     header: {
+
         flexDirection: "row",
         width: '100%',
         height: '50%',
+        marginTop: '5%'
     },
     name: {
         fontFamily: SpanFont.Span.fontFamily,
@@ -388,8 +367,8 @@ const styles = StyleSheet.create({
         marginLeft: '35%',        
     },
     bio: {
-        width: '55%',
-        marginLeft: '6%',
+        width: '70%',
+        marginLeft: '4%',
         fontFamily: "IBM Plex Mono",
         marginTop: '-5%'
     }, 
