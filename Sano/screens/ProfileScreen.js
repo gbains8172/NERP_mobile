@@ -36,13 +36,28 @@ export default class ProfileScreen extends Component {
         });
       };
     
-      addPostPressed = () =>{
-        alert('Add Post Pressed');
-      }
+    addPostPressed = () => {
+        if(this.state.selectedIndex == 0){
+            alert('Add Post Pressed');
+        } else if(this.state.selectedIndex == 1){
+            alert('Add Collection Pressed');
+        } else if(this.state.selectedIndex == 2){
+            alert('Add Wishlist Pressed');
+        }
+    
+    }
+    collectionPressed = () => {
+        alert('Collection Pressed')
+    }
+    wishlistPressed = () => {
+        alert('Wishlist Pressed')
+    }
 
-      followButtonPressed = () =>{
+    followButtonPressed = () => {
         alert('Follow Button Pressed');
-      }
+    }
+
+    
 
     render(){
         return(
@@ -95,6 +110,7 @@ export default class ProfileScreen extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
+                    {this.renderSegment()}
 
                         {/* <Masonry
                             sorted // optional - Default: false, Whether to sort bricks according to their index position or allow bricks to fill in as soon as the uri is ready.
@@ -115,39 +131,8 @@ export default class ProfileScreen extends Component {
                             /> */}
 
 
-
-                        <MasonryList
-                            sorted
-                            images={[
-                                // Can be used with different image object fieldnames.
-                                // Ex. source, source.uri, uri, URI, url, URL
-                                { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
-                                // IMPORTANT: It is REQUIRED for LOCAL IMAGES
-                                // to include a dimensions field with the
-                                // actual width and height of the image or
-                                // it will throw an error.
-                                // { source: require("yourApp/image.png"),
-                                //     dimensions: { width: 1080, height: 1920 }
-                                // },
-                                // "width" & "height" is an alternative to the dimensions
-                                // field that will also be acceptable.
-                                // { source: require("yourApp/image.png"),
-                                //     width: 1080,
-                                //     height: 1920 },
-                                { source: { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg" } },
-                                { uri: "https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg",
-                                    // Optional: Adding a dimensions field with
-                                    // the actual width and height for REMOTE IMAGES
-                                    // will help improve performance.
-                                    dimensions: { width: 1080, height: 1920 } },
-                                { URI: "https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg",
-                                    // Optional: Does not require an id for each
-                                    // image object, but is for best practices.
-                                    id: "blpccx4cn" },
-                                { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
-                                { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
-                            ]}
-                        />
+                        {/*get list of uri from api*/ }
+                        
 
 
                 </View>
@@ -155,6 +140,176 @@ export default class ProfileScreen extends Component {
             </SafeAreaView>
             </>
         );
+    }
+
+    renderSegment () {
+        if(this.state.selectedIndex == 0){
+            return(
+                <MasonryList
+                    sorted
+                    images={[
+                        // Can be used with different image object fieldnames.
+                        // Ex. source, source.uri, uri, URI, url, URL
+                        { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+                        // IMPORTANT: It is REQUIRED for LOCAL IMAGES
+                        // to include a dimensions field with the
+                        // actual width and height of the image or
+                        // it will throw an error.
+                        // { source: require("yourApp/image.png"),
+                        //     dimensions: { width: 1080, height: 1920 }
+                        // },
+                        // "width" & "height" is an alternative to the dimensions
+                        // field that will also be acceptable.
+                        // { source: require("yourApp/image.png"),
+                        //     width: 1080,
+                        //     height: 1920 },
+                        { source: { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg" } },
+                        { uri: "https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg",
+                            // Optional: Adding a dimensions field with
+                            // the actual width and height for REMOTE IMAGES
+                            // will help improve performance.
+                            dimensions: { width: 1080, height: 1920 } },
+                        { URI: "https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg",
+                            // Optional: Does not require an id for each
+                            // image object, but is for best practices.
+                            id: "blpccx4cn" },
+                        { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
+                        { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+                        
+                    ]}
+
+
+                />
+            );
+        } else if(this.state.selectedIndex == 1){
+            return(
+                <View style = {{alignSelf: "center"}}>
+                    <MasonryList
+                        sorted
+                        columns = {1}
+                        imageContainerStyle	= {{height: 230,  opacity: 0.5 }}
+                        containerWidth	= {(Dimensions.get('window').width) - 20}
+                        images={[
+                            // Can be used with different image object fieldnames.
+                            // Ex. source, source.uri, uri, URI, url, URL
+                            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg"                        },
+                            // IMPORTANT: It is REQUIRED for LOCAL IMAGES
+                            // to include a dimensions field with the
+                            // actual width and height of the image or
+                            // it will throw an error.
+                            // { source: require("yourApp/image.png"),
+                            //     dimensions: { width: 1080, height: 1920 }
+                            // },
+                            // "width" & "height" is an alternative to the dimensions
+                            // field that will also be acceptable.
+                            // { source: require("yourApp/image.png"),
+                            //     width: 1080,
+                            //     height: 1920 },
+                            { source: { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg" } },
+                            { uri: "https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg",
+                                // Optional: Adding a dimensions field with
+                                // the actual width and height for REMOTE IMAGES
+                                // will help improve performance.
+                                dimensions: { width: 1080, height: 1920 } },
+                            { URI: "https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg",
+                                // Optional: Does not require an id for each
+                                // image object, but is for best practices.
+                                id: "blpccx4cn" },
+                            { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
+                            { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+                        ]}
+
+                        onPressImage = {this.collectionPressed}
+                        renderIndividualFooter={(res) => {
+                        // console.log('res is', res);
+                            return (
+                            <View style = {styles.CollectionFooter}>
+                                <View style = {{width: '73%'}}>
+                                    <Text style = {styles.CollectionFooterFont}>
+                                        Collection Footer
+                                    </Text>
+                                </View>
+
+                                <View style = {{alignItems: "flex-end", width: '25%', marginRight: 10}}>
+                                    <Text style = {styles.postsFooterFont}>
+                                        100 POSTS
+                                    </Text>
+                                </View>
+
+                            </View>
+                            );
+                        }
+                    }
+                    />
+                </View>
+            );
+
+        } else if(this.state.selectedIndex == 2){
+            return(
+                <View style = {{alignSelf: "center"}}>
+                    <MasonryList
+                        sorted
+                        columns = {1}
+                        imageContainerStyle	= {{height: 230,  opacity: 0.5 }}
+                        containerWidth	= {(Dimensions.get('window').width) - 20}
+                        images={[
+                            // Can be used with different image object fieldnames.
+                            // Ex. source, source.uri, uri, URI, url, URL
+                            { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg"                        },
+                            // IMPORTANT: It is REQUIRED for LOCAL IMAGES
+                            // to include a dimensions field with the
+                            // actual width and height of the image or
+                            // it will throw an error.
+                            // { source: require("yourApp/image.png"),
+                            //     dimensions: { width: 1080, height: 1920 }
+                            // },
+                            // "width" & "height" is an alternative to the dimensions
+                            // field that will also be acceptable.
+                            // { source: require("yourApp/image.png"),
+                            //     width: 1080,
+                            //     height: 1920 },
+                            { source: { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg" } },
+                            { uri: "https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg",
+                                // Optional: Adding a dimensions field with
+                                // the actual width and height for REMOTE IMAGES
+                                // will help improve performance.
+                                dimensions: { width: 1080, height: 1920 } },
+                            { URI: "https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg",
+                                // Optional: Does not require an id for each
+                                // image object, but is for best practices.
+                                id: "blpccx4cn" },
+                            { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
+                            { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+                        ]}
+
+                        onPressImage = {this.wishlistPressed}
+                        renderIndividualFooter={(res) => {
+                        // console.log('res is', res);
+                            return (
+                            <View style = {styles.CollectionFooter}>
+                                <View style = {{width: '73%'}}>
+                                    <Text style = {styles.CollectionFooterFont}>
+                                        Wishlist Footer
+                                    </Text>
+                                </View>
+
+                                <View style = {{alignItems: "flex-end", width: '25%', marginRight: 10}}>
+                                    <Text style = {styles.postsFooterFont}>
+                                        100 POSTS
+                                    </Text>
+                                </View>
+
+                            </View>
+                            );
+                        }
+                    }
+                    />
+                </View>
+            );
+
+        }
+
+
     }
 }
 
@@ -171,8 +326,6 @@ const styles = StyleSheet.create({
     bottomView: {
         flex: 6,
         backgroundColor: 'white'
-
-
     },
     tabStyle:{
         borderWidth: 0,
@@ -244,6 +397,21 @@ const styles = StyleSheet.create({
         fontFamily: "IBM Plex Mono",
         fontSize: 12, 
 
+    },
+    CollectionFooter: {
+        flexDirection: "row",
+        width: '100%',
+        marginBottom: '5%'
+
+    },
+    CollectionFooterFont: {
+        fontFamily: SpanFont.Span.fontFamily,
+        fontSize: 20,
+    }, 
+    postsFooterFont: {
+        fontFamily: "IBM Plex Mono",
+        fontSize: 13,
+        color: 'rgba(0,0,0,0.5)'
     },
 
 });
