@@ -3,7 +3,7 @@ import {Text,SafeAreaView, FlatList, StyleSheet, View, Image, TouchableOpacity, 
 import androidSafeView from '../StyleSheets/androidSafeView';
 import { SearchBar } from 'react-native-elements';
 import SpanFont from '../StyleSheets/font'
-import images from '../assets/Images/images';
+import Images from '../assets/Images/Images';
 import { color } from "react-native-reanimated";
 
 
@@ -51,6 +51,7 @@ export default class Onboarding1Screen extends Component {
         };
 
     }
+
     // update text in login text field while typing
     updateSearchTerm = searchTerm => {
         this.setState({searchTerm: searchTerm});
@@ -60,7 +61,14 @@ export default class Onboarding1Screen extends Component {
         var tempArray = this.state.brandsArray;
         tempArray[selectedbrand.id].selected = !tempArray[selectedbrand.id].selected;
         this.setState({brandsArray: tempArray});
-      }
+    }
+
+    continuePressed = () => {
+
+        //continue to next setup page
+        this.props.navigation.navigate('MainNav');
+        
+    }
 
     render(){
         return(
@@ -69,10 +77,10 @@ export default class Onboarding1Screen extends Component {
             <StatusBar barStyle = "dark-content"/>
             <SafeAreaView style={{flex: 1, }, androidSafeView.AndroidSafeArea}>
                 <View style = {styles.topView}>
-                    <Text style = {{FontFamily:"IBM Plex Mono",fontSize:20, marginLeft: '5%'}}>Select your favorite brands</Text>
+                    <Text style = {{fontFamily:SpanFont.Span.fontFamily,fontSize:20, marginLeft: '5%'}}>Select your favorite brands</Text>
                     <SearchBar
                         lightTheme
-                        inputStyle={{color: 'black', fontFamily:"IBM Plex Mono"}}
+                        inputStyle={{color: 'black', fontFamily: "IBM Plex Mono"}}
                         inputContainerStyle = {{color: 'white', backgroundColor: 'rgba(0,0,0,0.05)', height: '100%'}}
                         containerStyle={{backgroundColor: 'white', marginTop: "10%", width: '90%',height: '25%', alignSelf: "center", borderTopWidth: 0, borderBottomWidth: 0}}
                         placeholder= "Search"
@@ -94,9 +102,9 @@ export default class Onboarding1Screen extends Component {
                                     <View style={{width: (Dimensions.get('window').width)/1.5, height: 50, margin:10, marginRight:50, flexDirection:'row', alignItems:'center'}}>
                                         <Text style={{fontFamily:"IBM Plex Mono",fontSize:20, margin:10, marginTop:20, marginLeft: 20}}>{item.brand}</Text>
                                     </View>
-                                    {/* <Image style={{marginLeft:20, width: '15%', height: 10, resizeMode: "contain", marginLeft: "-5%"}} source={images.select}/> */}
+                                    {/* <Image style={{marginLeft:20, width: '15%', height: 10, resizeMode: "contain", marginLeft: "-5%"}} source={Images.select}/> */}
                                     <Image style={{marginLeft:20, width: '15%', height: 10, resizeMode: "contain", marginLeft: "-5%"}} 
-                                    source={this.state.brandsArray[item.id].selected ? images.check : images.select}/>
+                                    source={this.state.brandsArray[item.id].selected ? Images.check : Images.select}/>
 
                                 </View>
                             </TouchableOpacity>

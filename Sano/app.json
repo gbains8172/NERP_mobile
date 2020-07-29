@@ -25,7 +25,7 @@
     "androidNavigationBar": {
       "visible": "immersive",
       "barStyle": "light-content",
-      "backgroundColor": "black"
+      "backgroundColor": "#000000"
       },
     "android" : {
       "softwareKeyboardLayoutMode": "pan"

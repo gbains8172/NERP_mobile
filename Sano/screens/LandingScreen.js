@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Text,SafeAreaView, StyleSheet, View, ImageBackground, Image, TouchableOpacity, StatusBar} from 'react-native';
 import androidSafeView from '../StyleSheets/androidSafeView';
-import images from '../assets/Images/images';
+import Images from '../assets/Images/Images';
 import VerticalText from 'react-native-vertical-text';
 import { abs } from "react-native-reanimated";
 import SpanFont from '../StyleSheets/font'
@@ -14,9 +14,9 @@ export default class LandingScreen extends Component {
         render(){
             return(
                 <>
-                <StatusBar barStyle = "light-content"/>
+                <StatusBar barStyle = "dark-content"/>
                 <View style = {styles.backgroundContainer}>
-                    <Image source = {images.LandingBackground} style = {styles.backgroundImage}/> 
+                    <Image source = {Images.LandingBackground} style = {styles.backgroundImage}/> 
                     <View style = {styles.SanoContainer}>
                         <VerticalText text = {"SANO"} style = {styles.Sano}/>
                     </View>
