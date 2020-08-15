@@ -24,6 +24,7 @@ const HomeStack = createStackNavigator(
             headerVisible:false,
             header: null,
           }
+          
 
     }
 );
@@ -104,6 +105,7 @@ ProfileStack.navigationOptions = {
       labelStyle: {
         fontFamily: "IBM Plex Mono"
       },
+
     },
   };
 
@@ -122,5 +124,5 @@ ProfileStack.navigationOptions = {
     ProfileStack
   },
   {
-    initialRouteName: 'HomeStack'
+    initialRouteName: 'HomeStack',
   });

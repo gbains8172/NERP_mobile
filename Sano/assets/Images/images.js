@@ -24,6 +24,10 @@ const Images = {
     addPost: require('../Images/addPostButton.png'),
     followButton:  require('../Images/followButton.png'),
 
+    //ExploreScreen Images
+    search : require('../Images/SearchButton.png'),
+    
+
 }
 
 export default Images;
