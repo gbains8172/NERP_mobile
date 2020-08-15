@@ -12,10 +12,6 @@ import ListView from 'deprecated-react-native-listview';
 
 
 
-
-
-
-
 export default class ProfileScreen extends Component {
 
     constructor(props){
@@ -24,10 +20,7 @@ export default class ProfileScreen extends Component {
         //let shared = User.getUser();
         this.state = {
             selectedIndex: 0,
-        }
-
-
-        
+        }        
     }
 
     handleIndexChange = index => {
@@ -57,6 +50,10 @@ export default class ProfileScreen extends Component {
         alert('Follow Button Pressed');
     }
 
+    notificationButtonPressed = () => {
+        alert('Follow Button Pressed');
+    }
+
     
 
     render(){
@@ -80,7 +77,10 @@ export default class ProfileScreen extends Component {
 
                         <View style = {styles.headerRight}>
                             {/* Does this bell Do anything??? */}
-                            <Image source = {Images.notification} style = {styles.notification}/>
+                            <TouchableOpacity onPress onPress = {this.notificationButtonPressed}>
+                                <Image source = {Images.notification} style = {styles.notification}/>
+                            </TouchableOpacity>
+
                         </View>
 
 
@@ -90,13 +90,16 @@ export default class ProfileScreen extends Component {
                     <View style = {styles.bio} >
                         <Text numberOfLines={2} style = {styles.bioText}>You merely adopted the dark. I was born in it, molded by it.</Text>
                     </View>
-                    <TouchableOpacity onPress onPress = {this.followButtonPressed}>
-                        <Image source = {Images.followButton} style = {styles.followButton}/>
-                    </TouchableOpacity>
+                    <View style = {styles.followButtonContainter}> 
+                        <TouchableOpacity onPress onPress = {this.followButtonPressed}>
+                            <Image source = {Images.followButton} style = {styles.followButton}/>
+                        </TouchableOpacity>
+                    </View>
+
                 </View>
 
                 <View style = {styles.bottomView}>
-                    <View style={{width: '100%', flexDirection: 'row', alignItems: "baseline"}}>
+                    <View style={{width: '100%', flexDirection: 'row', alignItems: "baseline",}}>
                         <View style = {styles.segmentedControlView}>
                             <SegmentedControlTab
                             tabStyle={styles.tabStyle}
@@ -110,11 +113,9 @@ export default class ProfileScreen extends Component {
                             onTabPress={this.handleIndexChange}
                             />
                         </View>
-                        <View style = {styles.addPostView}>
                             <TouchableOpacity onPress onPress = {this.addPostPressed}>
-                                <Image source ={Images.addPost}/>
+                                <Image source ={Images.addPost} style = {styles.addpostButton}/>
                             </TouchableOpacity>
-                        </View>
                     </View>
                     {this.renderSegment()}
 
@@ -181,6 +182,12 @@ export default class ProfileScreen extends Component {
                             id: "blpccx4cn" },
                         { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
                         { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+                        { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
+                        { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+                        { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+                        { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
+                        { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+
                         
                     ]}
 
@@ -288,9 +295,24 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     followButton: {
-        marginTop: '2%',
-        marginLeft: '4%',
+        // alignSelf: "flex-start",
+        // // marginLeft: '-80%',
+        // // marginTop: '-130%',
+        // //  resizeMode: 'contain',
+        //  width: undefined,
+        //  height: undefined,
+        aspectRatio: 2.5,
+        width: '100%',
+        height: undefined,
+        resizeMode: "contain"
     },
+    followButtonContainter: {
+        width: '20%', 
+        height:  '20%', 
+        marginLeft: '4%', 
+        marginTop: '2%'
+    },
+
     headerLeft: {
         width: '80%',
         flexDirection: "row",
@@ -318,7 +340,6 @@ const styles = StyleSheet.create({
         color: 'black',
         fontFamily: "IBM Plex Mono",
         fontSize: 12,
-        paddingBottom: 5,
         borderBottomColor: 'black',
         textDecorationLine: 'underline',
     },
@@ -336,6 +357,14 @@ const styles = StyleSheet.create({
         width: '19%',
         alignItems: "flex-end",
     },
+    addpostButton: {
+        alignItems: "flex-end",
+        marginLeft: '35%',
+        aspectRatio: 1, 
+        resizeMode: 'contain',
+        width: '10%',
+        height: undefined,
+    },
     profileImage: {
         width: '20%', 
         height: '65%',
@@ -344,7 +373,6 @@ const styles = StyleSheet.create({
         marginLeft: '3%',
     },
     header: {
-
         flexDirection: "row",
         width: '100%',
         height: '50%',
