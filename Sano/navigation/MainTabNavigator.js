@@ -8,6 +8,7 @@ import Images from '../assets/Images/Images';
 import HomeScreen from '../screens/HomeScreen';
 import ExploreScreen from '../screens/ExploreScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import AlertScreen from '../screens/AlertScreen';
 
 
 
@@ -110,6 +111,41 @@ ProfileStack.navigationOptions = {
   };
 
 
+const AlertStack = createStackNavigator(
+    {
+        Alert: AlertScreen,
+    }, 
+    {
+        initialRouteName: 'Alert',
+        defaultNavigationOptions: {
+            headerMode: 'none',
+            headerVisible:false,
+            header: null,
+          }
+
+    }
+);
+
+AlertStack.navigationOptions = {
+    tabBarLabel: 'Alert',
+    tabBarIcon: ({ focused }) => (
+      focused
+      ? <Image source={Images.Alert} style={styles.icon} />
+      : <Image source={Images.AlertFocused} style={styles.icon} />
+    ),
+    tabBarOptions: {
+      activeTintColor: '#000000',
+      inactiveTintColor: '#a6a6a6',
+      labelStyle: {
+        fontFamily: "IBM Plex Mono"
+      },
+
+    },
+  };
+
+
+
+
   const styles = StyleSheet.create({
     icon: {
       width: 26,
@@ -121,7 +157,8 @@ ProfileStack.navigationOptions = {
   export default createBottomTabNavigator({
     HomeStack,
     ExploreStack,
-    ProfileStack
+    AlertStack,
+    ProfileStack,
   },
   {
     initialRouteName: 'HomeStack',
