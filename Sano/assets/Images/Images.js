@@ -16,6 +16,11 @@ const Images = {
     ProfileFocused: require('../Images/ProfileFocused.png'),
     Alert: require('../Images/Alert.png'),
     AlertFocused: require('../Images/AlertFocused.png'),
+    AddPost: require('../Images/AddPost.png'),
+    ExitPost: require('../Images/ExitPost.png'),
+
+
+
 
 
 

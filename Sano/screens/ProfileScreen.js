@@ -77,7 +77,7 @@ export default class ProfileScreen extends Component {
 
                         <View style = {styles.headerRight}>
                             {/* Does this bell Do anything??? */}
-                            <TouchableOpacity onPress onPress = {this.notificationButtonPressed}>
+                            <TouchableOpacity  onPress = {this.notificationButtonPressed}>
                                 <Image source = {Images.notification} style = {styles.notification}/>
                             </TouchableOpacity>
 
@@ -91,7 +91,7 @@ export default class ProfileScreen extends Component {
                         <Text numberOfLines={2} style = {styles.bioText}>You merely adopted the dark. I was born in it, molded by it.</Text>
                     </View>
                     <View style = {styles.followButtonContainter}> 
-                        <TouchableOpacity onPress onPress = {this.followButtonPressed}>
+                        <TouchableOpacity  onPress = {this.followButtonPressed}>
                             <Image source = {Images.followButton} style = {styles.followButton}/>
                         </TouchableOpacity>
                     </View>
@@ -113,7 +113,7 @@ export default class ProfileScreen extends Component {
                             onTabPress={this.handleIndexChange}
                             />
                         </View>
-                            <TouchableOpacity onPress onPress = {this.addPostPressed}>
+                            <TouchableOpacity  onPress = {this.addPostPressed}>
                                 <Image source ={Images.addPost} style = {styles.addpostButton}/>
                             </TouchableOpacity>
                     </View>

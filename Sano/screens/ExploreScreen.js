@@ -45,7 +45,7 @@ export default class ExploreScreen extends Component {
 
                         <View style = {styles.headerRight}>
                             {/* Does this bell Do anything??? */}
-                            <TouchableOpacity onPress onPress = {this.searchButtonPressed}>
+                            <TouchableOpacity  onPress = {this.searchButtonPressed}>
                                 <Image source = {Images.search} style = {styles.search}/>
                             </TouchableOpacity>
 
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     exploreText: {
         fontFamily: SpanFont.Span.fontFamily,
         fontSize: 24, 
-        marginLeft: '5%',        
+        marginLeft: '3%',        
     },
     headerRight: {
         width: '15%',

@@ -5,7 +5,7 @@ import SpanFont from '../StyleSheets/font'
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 
-export default class AlertScreen extends Component {
+export default class AddPostScreen extends Component {
     constructor(props){
         super(props);
 
@@ -44,42 +44,12 @@ export default class AlertScreen extends Component {
     }
 
     render(){
-        // return(
-        //     <>
-        //     <StatusBar barStyle = "dark-content"/>
-        //     <SafeAreaView style={{flex: 1, }, androidSafeView.AndroidSafeArea}>
-        //     <Modal
-        //         animationType="slide"
-        //         transparent={true}
-        //         visible={this.state.modalVisible} 
-        //     >
-
-        //         <TouchableOpacity onPress = {this.exitModal}>
-        //         <View style = {{backgroundColor: 'blue', height: '50%'}}>
-
-        //                 <Text>
-        //                     exit
-        //                 </Text>
-        //                 </View>
-
-      
-        //         </TouchableOpacity>
-
-        //         <Text style = {{ marginTop: '50%'}}>Alert Screen</Text>
-
-
-        //     </Modal>
-
-        //     </SafeAreaView>
-        //     </>
-
-        // );
         return(
 
         <>
         <StatusBar barStyle = "dark-content"/>
         <SafeAreaView style={{flex: 1, }, androidSafeView.AndroidSafeArea}>
-            <Text>Alert Screen</Text>
+            <Text>AddPost Screen</Text>
         </SafeAreaView>
         </>
         );

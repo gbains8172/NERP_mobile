@@ -9,6 +9,8 @@ import HomeScreen from '../screens/HomeScreen';
 import ExploreScreen from '../screens/ExploreScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import AlertScreen from '../screens/AlertScreen';
+import AddPostScreen from '../screens/AddPostScreen';
+
 
 
 
@@ -130,8 +132,8 @@ AlertStack.navigationOptions = {
     tabBarLabel: 'Alert',
     tabBarIcon: ({ focused }) => (
       focused
-      ? <Image source={Images.Alert} style={styles.icon} />
-      : <Image source={Images.AlertFocused} style={styles.icon} />
+      ? <Image source={Images.AlertFocused} style={styles.icon} />
+      : <Image source={Images.Alert} style={styles.icon} />
     ),
     tabBarOptions: {
       activeTintColor: '#000000',
@@ -143,8 +145,40 @@ AlertStack.navigationOptions = {
     },
   };
 
+  const AddPostStack = createStackNavigator(
+    {
+      AddPost: AddPostScreen,
+    }, 
+    {
+        initialRouteName: 'AddPost',
+        defaultNavigationOptions: {
+            headerMode: 'none',
+            headerVisible:false,
+            header: null,
+            showLabel: false,
 
+          }
 
+    }
+  );
+
+  AddPostStack.navigationOptions = {
+    tabBarLabel: ' ',
+    tabBarIcon: ({ focused }) => (
+      focused
+      ? <Image source={Images.ExitPost} style={styles.addIcon} />
+      : <Image source={Images.AddPost} style={styles.addIcon} />
+    ),
+    tabBarOptions: {
+      activeTintColor: '#000000',
+      inactiveTintColor: '#a6a6a6',
+      labelStyle: {
+        fontFamily: "IBM Plex Mono"
+      },
+      
+
+    },
+  };
 
   const styles = StyleSheet.create({
     icon: {
@@ -152,11 +186,18 @@ AlertStack.navigationOptions = {
       height: 26,
       alignItems: 'stretch'
     },
+    addIcon: {
+      width: 40,
+      height: 40,
+      alignItems: 'stretch', 
+      marginTop: '20%'
+    },
   });
 
   export default createBottomTabNavigator({
     HomeStack,
     ExploreStack,
+    AddPostStack,
     AlertStack,
     ProfileStack,
   },
