@@ -29,6 +29,7 @@ export default class ProfileScreen extends Component {
         });
       };
     
+      // the add post button was removed so i dont think we will need this function anymore
     addPostPressed = () => {
         if(this.state.selectedIndex == 0){
             alert('Add Post Pressed');
@@ -53,6 +54,9 @@ export default class ProfileScreen extends Component {
     notificationButtonPressed = () => {
         alert('Follow Button Pressed');
     }
+    settingsButtonPressed = () => {
+        alert('Setting Button Pressed');
+    }
 
     
 
@@ -60,18 +64,38 @@ export default class ProfileScreen extends Component {
         return(
             <>
             <StatusBar barStyle = "dark-content"/>
-            <SafeAreaView style={{flex: 1, backgroundColor: 'white' }, androidSafeView.AndroidSafeArea}>
+            <SafeAreaView style={{flex: 1, backgroundColor: 'white' }}>
 
                 <View style = {styles.topView}>
+                    <View style = {styles.profileTag}> 
+                    <TouchableOpacity onPress = {this.settingsButtonPressed} style = {{paddingLeft: '20%'}}>
+                        <Image source = {Images.settingsButton} style = {styles.settingButtonStyle}  />
+                    </TouchableOpacity>
+
+                        {/* Grab userName!! */}
+                        <Text style = {styles.userName}>@theBane</Text>
+                        <View style={{flex:1,}} />
+                    </View>
+
                     <View style = {styles.header}>
                         <View style = {styles.headerLeft}>
                             <Image source = {Images.tempProfileImage} style = {styles.profileImage}/>
                             <View>
                                 {/* Grab Name!! */}
                                 <Text style = {styles.name}> Gavin Bains</Text>
+                                <View style = {styles.followers}>
+                                <Image source = {Images.followers} style = {styles.followersImageStyle}/>
+
+                                {/* Grab Number of Followers!! */}
+                                <Text style = {styles.followersText}> 89 Followers</Text>
+
+                                </View>
+
+                                <View style = {styles.bio} >
+                                    <Text numberOfLines={2} style = {styles.bioText}>You merely adopted the dark. I was born in it, molded by it.</Text>
+                                </View>
                                 
-                                {/* Grab userName!! */}
-                                <Text style = {styles.userName}>@theBane </Text>
+
                             </View>
                         </View>
 
@@ -87,14 +111,7 @@ export default class ProfileScreen extends Component {
                     </View>
 
                     {/* Get The Bio From API */}
-                    <View style = {styles.bio} >
-                        <Text numberOfLines={2} style = {styles.bioText}>You merely adopted the dark. I was born in it, molded by it.</Text>
-                    </View>
-                    <View style = {styles.followButtonContainter}> 
-                        <TouchableOpacity  onPress = {this.followButtonPressed}>
-                            <Image source = {Images.followButton} style = {styles.followButton}/>
-                        </TouchableOpacity>
-                    </View>
+  
 
                 </View>
 
@@ -113,9 +130,13 @@ export default class ProfileScreen extends Component {
                             onTabPress={this.handleIndexChange}
                             />
                         </View>
-                            <TouchableOpacity  onPress = {this.addPostPressed}>
-                                <Image source ={Images.addPost} style = {styles.addpostButton}/>
+
+                        <View style = {styles.followButtonContainter}> 
+                            <TouchableOpacity  onPress = {this.followButtonPressed}>
+                                <Image source = {Images.followButton} style = {styles.followButton}/>
                             </TouchableOpacity>
+                        </View>
+
                     </View>
                     {this.renderSegment()}
 
@@ -291,7 +312,7 @@ export default class ProfileScreen extends Component {
 
 const styles = StyleSheet.create({
     topView: {
-        flex: 2,
+        flex: 1,
         backgroundColor: 'white'
     },
     followButton: {
@@ -309,21 +330,77 @@ const styles = StyleSheet.create({
     followButtonContainter: {
         width: '20%', 
         height:  '20%', 
-        marginLeft: '4%', 
-        marginTop: '2%'
+        marginBottom: '5%',
+        marginTop: '-5%',
+        alignSelf: "flex-end"
     },
-
+    header: {
+        flexDirection: "row",
+        width: '100%',
+        height: '40%',
+        marginTop: '3%',
+    },
     headerLeft: {
         width: '80%',
         flexDirection: "row",
+        
     }, 
     headerRight: {
         width: '18%',
         alignItems: "flex-end",
 
     },
+    followers: {
+        flexDirection: 'row',
+        height: '30%',
+        
+    },
+    followersImageStyle : {
+        width: 15, 
+        height: 10,
+        marginLeft: '3%',
+        marginTop: '1%',
+    },
+    followersText: {
+        fontFamily: "IBM Plex Mono",
+        fontSize: 10, 
+    },
+     
+    profileTag: {
+        // flexDirection: "row",
+        // width: '100%',
+        // height: '20%',
+        // borderColor: '#E5E5E5',
+        // flexDirection:'row',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+
+        width: '100%',
+        height:'20%',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        zIndex: 1,
+        borderBottomWidth: 1,
+        borderColor: '#E5E5E5',
+
+
+
+    },
+    userName: {
+        fontFamily: "IBM Plex Mono",
+        fontSize: 14,
+        flex: 2,
+        textAlign:'center', 
+
+    },
+    settingButtonStyle: {
+        height: 17,
+        width: 17,
+    },
+
     bottomView: {
-        flex: 4.5,
+        flex: 3.5,
         backgroundColor: 'white'
     },
     tabStyle:{
@@ -366,27 +443,20 @@ const styles = StyleSheet.create({
         height: undefined,
     },
     profileImage: {
-        width: '20%', 
-        height: '65%',
+        width: '25%', 
+        height: '120%',
         resizeMode: 'contain',
-        borderRadius: Dimensions.get('window').width / 2,
+        // borderRadius: 10000, // I just made this a really large number
+        borderRadius: Dimensions.get('window').height / 2, 
+
         marginLeft: '3%',
     },
-    header: {
-        flexDirection: "row",
-        width: '100%',
-        height: '50%',
-        marginTop: '5%'
-    },
+
     name: {
         fontFamily: SpanFont.Span.fontFamily,
         fontSize: 23
     },
-    userName: {
-        fontFamily: "IBM Plex Mono",
-        opacity: 0.5,
-        marginLeft: 8,
-    },
+
     notification: {
         // height: '25%',
         // width: '5%',
@@ -395,14 +465,13 @@ const styles = StyleSheet.create({
         marginLeft: '35%',        
     },
     bio: {
-        width: '70%',
-        marginLeft: '4%',
+        width: '90%',
+        marginLeft: '3%',
         fontFamily: "IBM Plex Mono",
-        marginTop: '-5%'
     }, 
     bioText: {
         fontFamily: "IBM Plex Mono",
-        fontSize: 12, 
+        fontSize: 10, 
 
     },
     CollectionFooter: {
