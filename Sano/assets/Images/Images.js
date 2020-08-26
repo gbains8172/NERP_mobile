@@ -31,7 +31,7 @@ const Images = {
     //ProfileScreen Images
     notification: require('../Images/notification.png'),
     addPost: require('../Images/addPostButton.png'),
-    followButton:  require('../Images/FollowButton.png'),
+    followButton:  require('../Images/followButton.png'),
     settingsButton: require('../Images/SettingsButton.png'),
     followers: require('../Images/NumFollowers.png'),
 
