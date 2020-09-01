@@ -19,12 +19,6 @@ const Images = {
     AddPost: require('../Images/AddPost.png'),
     ExitPost: require('../Images/ExitPost.png'),
 
-
-
-
-
-
-
     //Temporary Images
     tempProfileImage: require('../Images/TempImages/tempProfileImage.jpg'),
 
@@ -37,6 +31,14 @@ const Images = {
 
     //ExploreScreen Images
     search : require('../Images/SearchButton.png'),
+
+    //FeedScreen Images
+    feedDropDownArrow : require('../Images/feedDropDownArrow.png'),
+    shoppingBag : require('../Images/shoppingBag.png'),
+    addToCollection : require('../Images/addToCollection.png'),
+    commentPost : require('../Images/commentPost.png'),
+    likePost : require('../Images/likePost.png'),
+
     
 
 }

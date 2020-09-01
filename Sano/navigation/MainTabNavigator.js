@@ -23,9 +23,10 @@ const HomeStack = createStackNavigator(
     {
         initialRouteName: 'Home',
         defaultNavigationOptions: {
-            headerMode: 'none',
-            headerVisible:false,
-            header: null,
+            headerTitle: 'SANO',
+            headerTitleAlign: 'center',
+            headerTitleStyle: {fontFamily: 'IBM Plex Mono'},
+            
           }
           
 
@@ -192,6 +193,10 @@ AlertStack.navigationOptions = {
       alignItems: 'stretch', 
       marginTop: '20%'
     },
+    header: {
+      fontFamily: 'IBM Plex Mono'
+    }
+
   });
 
   export default createBottomTabNavigator({
