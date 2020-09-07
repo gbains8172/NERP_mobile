@@ -11,6 +11,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default class HomeScreen extends Component {
 
+
     
     constructor(props){
         super(props);
@@ -18,8 +19,22 @@ export default class HomeScreen extends Component {
         //let shared = User.getUser();
         this.state = {
             selectedIndex: 0,
+            imagePressed: false, // when the image is pressed we expand the image view
         }        
     }
+
+    // componentDidMount () {
+    //     const unsubscribe = this.props.navigation.addListener('tabPress', e => {
+    //         // Prevent default action
+    //         e.preventDefault();
+    //         alert('Default behavior prevented');
+
+    //       });
+
+    //       this._unsubscribe = this.props.navigation.addListener('tabPress', () => {
+    //         alert('Default behavior prevented1');
+    //       });
+    // }
 
     likePressed = () => {
         alert('like Pressed')
@@ -38,6 +53,9 @@ export default class HomeScreen extends Component {
     profileImagePressed = () => {
         alert('ProfileImage Pressed');
     }
+    handleImagePress = () => {
+        this.setState({imagePressed: !this.state.imagePressed})
+    }
 
 
     render(){
@@ -49,8 +67,9 @@ export default class HomeScreen extends Component {
                     <MasonryList
                         sorted
                         columns = {1}
-                        imageContainerStyle	= {{height: 400,}}
+                        imageContainerStyle	= {{height: this.state.imagePressed? 500: 400,}}
                         containerWidth	= {(Dimensions.get('window').width)}
+                        onPressImage = {this.handleImagePress}
                         images={[
                             { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg"                        },
                             { source: { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg" } },
@@ -91,7 +110,6 @@ export default class HomeScreen extends Component {
                         }
                         }
 
-                        onPressImage = {this.collectionPressed}
                         renderIndividualFooter={(res) => {
                             return (
                             <View style = {styles.PostFooter}>

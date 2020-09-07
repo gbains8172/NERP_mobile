@@ -1,8 +1,16 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Images from '../assets/Images/Images';
+import {
+  Menu,
+  MenuProvider,
+  MenuOptions,
+  MenuOption,
+  MenuTrigger,
+  renderers,
+} from 'react-native-popup-menu';
 
 
 import HomeScreen from '../screens/HomeScreen';
@@ -158,6 +166,7 @@ AlertStack.navigationOptions = {
             header: null,
             showLabel: false,
 
+
           }
 
     }
@@ -179,6 +188,32 @@ AlertStack.navigationOptions = {
       
 
     },
+    tabBarOnPress:({navigation, defaultHandler}) => {
+      
+      // render() {
+      //   return (
+      //     <View
+      //       style={{
+      //         flexDirection: "row",
+      //         height: 100,
+      //         padding: 20
+      //       }}
+      //     >
+      //       <View style={{ backgroundColor: "blue", flex: 0.3 }} />
+      //       <View style={{ backgroundColor: "red", flex: 0.5 }} />
+      //       <Text>Hello World!</Text>
+      //     </View>
+      //   );
+      // };
+      
+      
+       console.log(navigation.dangerouslyGetParent().state.routes.routesName );
+
+
+      //  navigation.navigate('HomeStack')
+       //preventDefault();
+
+}
   };
 
   const styles = StyleSheet.create({
